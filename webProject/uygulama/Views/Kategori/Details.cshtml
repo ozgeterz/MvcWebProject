@@ -1,0 +1,27 @@
+﻿@model uygulama.Entity.KategoriBilgileri
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/adminlayout.cshtml";
+}
+<div class="container pb-5">
+    <h2>Detay</h2>
+    <hr />
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.KategoriIsmi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KategoriIsmi)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Güncelle", "Edit", new { id = Model.KategoriID }) |
+        @Html.ActionLink("Kategori Liste", "Index", null, new { @class = "btn btn-warning" })
+    </p>
+</div>

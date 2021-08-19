@@ -1,0 +1,38 @@
+﻿@using uygulama.Entity;
+@model IEnumerable<IhaleBilgileri>
+@{
+    ViewBag.Title = "Index";
+
+
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4">İHALEM'e HOŞGELDİNİZ</h1>
+        <p class="lead">Aktif olan ihaleleri görmek için aktif ihaleler menüsüne bakınız..</p>
+        <hr class="my-4">
+
+
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var Ihale in Model)
+    {
+        <div class="col-md-3 mb-3">
+            <div class="card h-100">
+                <img src="~/Update/@Ihale.Image" class="card-img-top" alt="@Ihale.IhaleID">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <p class="card-text">@Ihale.IhaleUrunIsmi</p>
+                    </h5>
+                    <p class="card-text"> @Ihale.BaslangicFiyat</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/Home/urundetay/@Ihale.IhaleID">ÜRÜN DETAY</a>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

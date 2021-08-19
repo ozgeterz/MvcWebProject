@@ -1,0 +1,39 @@
+﻿@model IEnumerable<uygulama.Entity.KategoriBilgileri>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/adminlayout.cshtml";
+}
+<div class="container pb-5">
+
+    <h2>Kategoriler</h2>
+    <hr />
+    <p>
+        @Html.ActionLink("Yeni Kategori", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <hr />
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KategoriIsmi)
+            </th>
+            <th style="width:20%">
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KategoriIsmi)
+                </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.KategoriID }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Detay", "Details", new { id = item.KategoriID }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Sil", "Delete", new { id = item.KategoriID }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

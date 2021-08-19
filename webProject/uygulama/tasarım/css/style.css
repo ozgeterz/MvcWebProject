@@ -1,0 +1,31 @@
+
+.jumbotron
+{
+    background-image: url("../img/backk.jpg");
+    background-size: cover;
+    height: 100%;
+}
+#product-starting-price{
+    font-size: 30px;
+    color:purple;
+}
+h1{
+    font-size:40px;
+    color:darkred;
+}
+h2{
+    font-size: 20px;
+    color: black;
+}
+
+.btn-success
+{
+    color: rgb(79, 139, 61);
+    font-size: large;
+    background-color:rgb(104, 221, 80);
+ 
+}
+.dropdown-item
+{
+    background-color: rgb(140, 106, 168);
+}

@@ -1,0 +1,91 @@
+﻿@model uygulama.Entity.IhaleBilgileri
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/adminlayout.cshtml";
+}
+<div class="container pb-5">
+    <h2>Detay</h2>
+    <hr />
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.KategoriID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KategoriID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IhaleDurum)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IhaleDurum)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BaslangicFiyat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BaslangicFiyat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IhaleBaslangicT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IhaleBaslangicT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IhaleBitisT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IhaleBitisT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OnaylananTeklifID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OnaylananTeklifID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IhaleDetayBilgi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IhaleDetayBilgi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IhaleUrunIsmi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IhaleUrunIsmi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Güncelle", "Edit", new { id = Model.IhaleID }) |
+        @Html.ActionLink("İhale Liste", "Index", null, new { @class = "btn btn-warning" })
+    </p>
+</div>

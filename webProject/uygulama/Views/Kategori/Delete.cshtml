@@ -1,0 +1,34 @@
+﻿@model uygulama.Entity.KategoriBilgileri
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/adminlayout.cshtml";
+}
+<div class="container pb-5">
+    <h2>Kategoriyi silmek istediğinize emin misiniz?</h2>
+    <hr />
+
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.KategoriIsmi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KategoriIsmi)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Sil" class="btn btn-danger" />
+                @Html.ActionLink("Kategori Liste", "Index", null, new { @class = "btn btn-warning" })
+            </div>
+        }
+    </div>
+</div>

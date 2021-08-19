@@ -1,0 +1,115 @@
+﻿@model IEnumerable<uygulama.Entity.IhaleBilgileri>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/adminlayout.cshtml";
+}
+<div class="container pb-5">
+    <h2>İhaleler</h2>
+    <hr />
+    <p>
+        @Html.ActionLink("Yeni İhale", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IhaleDurum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KategoriID)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.BaslangicFiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IhaleBaslangicT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IhaleBitisT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OnaylananTeklifID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IhaleDetayBilgi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IhaleUrunIsmi)
+            </th>
+
+            <th style="width:20%">
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/Update/@item.Image" width="70" />
+                </td>
+
+                <td>
+
+                    @if (item.IhaleDurum == "Aktif")
+                    {
+                        <label class="badge bg-success">
+
+                            AKTİF İHALE
+                        </label>
+                    }
+                    else if (item.IhaleDurum == "Tamamlanmış")
+                    {
+                        <label class="badge bg-warning">
+
+                            TAMAMLANMIŞ İHALE
+                        </label>
+                    }
+                    else if (item.IhaleDurum == "iptal edilmiş")
+                    {
+                        <label class="badge bg-danger">
+
+                            İPTAL EDİLMİŞ İHALE
+                        </label>
+                    }
+
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.KategoriID)
+
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.BaslangicFiyat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IhaleBaslangicT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IhaleBitisT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OnaylananTeklifID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IhaleDetayBilgi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IhaleUrunIsmi)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.IhaleID }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Detay", "Details", new { id = item.IhaleID }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Sil", "Delete", new { id = item.IhaleID }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

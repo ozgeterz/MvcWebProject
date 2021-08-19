@@ -1,0 +1,60 @@
+﻿@using uygulama.Entity;
+@model IEnumerable<IhaleBilgileri>
+@{
+    ViewBag.Title = "teknoloji";
+}
+
+
+
+<div class="container pb-5">
+    <div class="row">
+        <div class=col-md-3>
+
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                    KATEGORİLER
+                </a>
+                <a href="/Home/teknoloji" class="list-group-item list-group-item-action">TEKNOLOJİ</a>
+                <a href="/Home/arazitarla" class="list-group-item list-group-item-action">ARAZİ/TARLA</a>
+                <a href="/Home/evaleti" class="list-group-item list-group-item-action">EV ALETİ</a>
+                <a href="/Home/aracotomobil" class="list-group-item list-group-item-action">OTOMOBİL/ARAÇ</a>
+                <a href="/Home/fabrika" class="list-group-item list-group-item-action">FABRİKA</a>
+            </div>
+        </div>
+
+
+        <div class=col-md-9>
+
+
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var Ihale in Model)
+                {
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100">
+                            <img src="~/Update/@Ihale.Image" class="card-img-top" alt="@Ihale.IhaleID">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <p class="card-text">@Ihale.IhaleUrunIsmi</p>
+                                </h5>
+                                <p class="card-text">@Ihale.BaslangicFiyat</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/Home/urundetay/@Ihale.IhaleID">ÜRÜN DETAY</a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/holder.min.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+
+
+

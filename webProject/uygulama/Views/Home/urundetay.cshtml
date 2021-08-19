@@ -1,0 +1,49 @@
+﻿@using uygulama.Entity;
+@model IhaleBilgileri
+@{
+    ViewBag.Title = "urundetay";
+}
+
+
+<div class="container pb-5">
+    <div class="row">
+
+        <div class="col-md-6">
+            <img src="~/Update/@Model.Image" class="img-responsive w-100">
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@Model.IhaleUrunIsmi #34525245 </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="label badge-primary">Stokta </span>
+                    <span class="product-number">#2384793 </span>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div id="description">
+                        <h2>@Model.IhaleDetayBilgi  </h2>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <h4 id="product-starting-price"> @Model.BaslangicFiyat </span>
+
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <button class="btn btn-success"><a href="/Home/teklif">İHALE İÇİN TEKLİF VER</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</html>
